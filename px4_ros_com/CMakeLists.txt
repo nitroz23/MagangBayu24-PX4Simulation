@@ -60,19 +60,6 @@ add_executable(offboard_control src/examples/offboard/offboard_control.cpp)
 ament_target_dependencies(offboard_control rclcpp px4_msgs)
 install(TARGETS offboard_control DESTINATION lib/${PROJECT_NAME})
 
-add_executable(circle src/examples/shapes/circle.cpp)
-ament_target_dependencies(circle rclcpp px4_msgs)
-install(TARGETS circle DESTINATION lib/${PROJECT_NAME})
-
-add_executable(pentagram src/examples/shapes/pentagram.cpp)
-ament_target_dependencies(pentagram rclcpp px4_msgs geometry_msgs)
-install(TARGETS pentagram DESTINATION lib/${PROJECT_NAME})
-
-add_executable(rectangle src/examples/shapes/rectangle.cpp)
-ament_target_dependencies(rectangle rclcpp px4_msgs geometry_msgs)
-install(TARGETS rectangle DESTINATION lib/${PROJECT_NAME})
-
-
 ############
 # Install ##
 ############
