@@ -23,5 +23,4 @@ NRP     :
   ```sh
   ros2 pkg create --build-type ament_python {nama-package}
   ```
-- Sertakan dokumentasi untuk setiap tugas yang berisi **laporan singkat** mengenai langkah pengerjaan, kendala saat mengerjakan, bagaimana caramu menyelesaikan masalah tersebut, dan **link video simulasi**. Dokumentasi dikumpulkan dalam bentuk PDF dengan format ```{nama}.pdf```. Dokumentasi 3 penugasan diletakkan di dalam folder ```docs```.
-
+- Sertakan dokumentasi untuk setiap tugas yang berisi **laporan singkat** mengenai langkah pengerjaan, kendala saat mengerjakan, bagaimana caramu menyelesaikan masalah tersebut, dan **link video simulasi**. Dokumentasi dikumpulkan dalam bentuk PDF dengan format ```{no tugas_nama}.pdf```. Dokumentasi 3 penugasan diletakkan di dalam folder ```docs``` di dalam package yang kalian buat.
