@@ -1,7 +1,7 @@
 # Magang Bayucaraka 2024 - PX4 Simulation
 
-Nama    : \
-NRP     : 
+Nama    : Muhammad Zia Alhambra\
+NRP     : 5024231059
 
 ## Cara Pengumpulan
 - Fork repositori ini
