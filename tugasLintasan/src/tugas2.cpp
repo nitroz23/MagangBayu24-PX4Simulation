@@ -40,11 +40,10 @@ public:
             publishOffboardControlMode();
             publishTrajectorySetpoint();
 
-            if (offboardSetpointCounter_ % 40 == 0 && offboardSetpointCounter_ != 0 && missionStep != 0 && missionStep < 10){
+            if (offboardSetpointCounter_ % 40 == 0 && offboardSetpointCounter_ > 40 && missionStep < 10){
                 missionStep++;
                 if (missionStep % 2 == 0){droneRad -= 1.57;}
             } 
-            else if (offboardSetpointCounter_ == 70){missionStep = 1;} 
             else if (missionStep == 10){
                 this->publishVehicleCommand(VehicleCommand::VEHICLE_CMD_NAV_LAND, 1, 0);
                 if (offboardSetpointCounter_ == 550){
@@ -52,7 +51,6 @@ public:
                     missionStep++;
                 }
             }
-
             if (missionStep < 11){
                 offboardSetpointCounter_++;
             }
