@@ -30,9 +30,9 @@ find_package(sensor_msgs REQUIRED)
 
 # include_directories(include)
 
-add_executable(aaaa src/tugas2.cpp)
-ament_target_dependencies(aaaa rclcpp px4_msgs)
-install(TARGETS aaaa DESTINATION lib/${PROJECT_NAME})
+add_executable(kotak src/tugas2.cpp)
+ament_target_dependencies(kotak rclcpp px4_msgs)
+install(TARGETS kotak DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

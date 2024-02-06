@@ -13,10 +13,10 @@ using namespace std::chrono_literals;
 using namespace px4_msgs::msg;
 
 int missionStep = 0;
-float droneX[10] = {0.00, 0.00, 0.00, 3.00, 3.000, 3.000, 3.000, 0.000, 0.000, 0.00};
+float droneX[10] = {0.00, 0.00, 0.00, -3.00, -3.000, -3.000, -3.000, 0.000, 0.000, 0.00};
 float droneY[10] = {0.00, 1.50, 1.50, 1.50, 1.500, -1.50, -1.50, -1.50, -1.50, 0.00};
+float droneZ = -5.00;
 float droneRad = 0.00;
-//float droneYaw[10] = {1.57, 1.57, 0.00, 0.00, -1.57, -1.57, -3.14, -3.14, -4.71, -4.71};
 
 class MissionControl : public rclcpp::Node
 {
@@ -42,7 +42,7 @@ public:
 
             if (offboardSetpointCounter_ % 40 == 0 && offboardSetpointCounter_ > 40 && missionStep < 10){
                 missionStep++;
-                if (missionStep % 2 == 0){droneRad -= 1.57;}
+                if (missionStep % 2 == 0){droneRad += 1.57;}
             } 
             else if (missionStep == 10){
                 this->publishVehicleCommand(VehicleCommand::VEHICLE_CMD_NAV_LAND, 1, 0);
@@ -102,8 +102,8 @@ void MissionControl::publishOffboardControlMode(){
 
 void MissionControl::publishTrajectorySetpoint(){
     TrajectorySetpoint msg{};
-    msg.position = {droneX[missionStep], droneY[missionStep], -5.0};
-    msg.yaw = droneRad - 1.57;
+    msg.position = {droneX[missionStep], droneY[missionStep], droneZ};
+    msg.yaw = droneRad + 1.57;
     msg.timestamp = this->get_clock()->now().nanoseconds() / 1000;
     trajectorySetpointPublisher_->publish(msg);
 }
