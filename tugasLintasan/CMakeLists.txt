@@ -30,6 +30,10 @@ find_package(sensor_msgs REQUIRED)
 
 # include_directories(include)
 
+add_executable(bulat src/tugas1.cpp)
+ament_target_dependencies(bulat rclcpp px4_msgs)
+install(TARGETS bulat DESTINATION lib/${PROJECT_NAME})
+
 add_executable(kotak src/tugas2.cpp)
 ament_target_dependencies(kotak rclcpp px4_msgs)
 install(TARGETS kotak DESTINATION lib/${PROJECT_NAME})
