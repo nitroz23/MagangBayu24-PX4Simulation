@@ -42,12 +42,14 @@ public:
                 pathRad += 0.157;
             }
             if (droneRad <= -6.28){
+                if (offboardSetpointCounter_ < 380){
                 this->publishVehicleCommand(VehicleCommand::VEHICLE_CMD_NAV_LAND, 1, 0);
-                if (offboardSetpointCounter_ == 500){
+                }
+                if (offboardSetpointCounter_ == 400){
                     this->disarm();
                 }
             }                
-            if (offboardSetpointCounter_ < 600){
+            if (offboardSetpointCounter_ <= 400){
                 offboardSetpointCounter_++;
             }
 

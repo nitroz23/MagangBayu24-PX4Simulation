@@ -13,8 +13,8 @@ using namespace std::chrono_literals;
 using namespace px4_msgs::msg;
 
 int missionStep = 0;
-float droneX[10] = {0.00, 0.00, 0.00, -3.00, -3.000, -3.000, -3.000, 0.000, 0.000, 0.00};
-float droneY[10] = {0.00, 1.50, 1.50, 1.50, 1.500, -1.50, -1.50, -1.50, -1.50, 0.00};
+float droneX[10] = {0.00, 0.00, 0.00, 3.00, 3.000, 3.000, 3.000, 0.000, 0.000, 0.00};
+float droneY[10] = {0.00, -1.50, -1.50, -1.50, -1.500, 1.50, 1.50, 1.50, 1.50, 0.00};
 float droneZ = -5.00;
 float droneRad = 0.00;
 
